@@ -4,7 +4,7 @@ const stub = ClarifaiStub.grpc();
 
 const metadata = new grpc.Metadata();
 
-metadata.set("authorization", "Key 3920518f06ca4d13bbbec5505236d089");
+metadata.set("authorization", "Key dc1ec632ed194825b8ca37955bb07d49");
 
 
 const handleClarifaiResponse =  (req, res)=>{
@@ -15,6 +15,7 @@ const handleClarifaiResponse =  (req, res)=>{
         {
             // This is the model ID of a publicly available General model. You may use any other public or custom model ID.
             model_id: "f76196b43bbd45c99b4f3cd8e8b40a8a",
+            version_id: "6dc7e46bc9124c5c8824be4822abe105",
             inputs: [{data: {image: {url: url}}}]
         },
         metadata,
