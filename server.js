@@ -22,12 +22,9 @@ const app = new express();
 app.use(cors());
 app.use(express.json());
 
-// app.get(('/'), (req, res)=>{
-//     pg.select('*').from('users')
-//     .then(users=>{
-//         res.json(users);
-//     })
-// })
+app.get(('/'), (req, res)=>{
+    res.json("Working")
+})
 
 app.post(('/signin'),(req, res)=>signin.handleSignIn(req, res, pg, bcrypt))
 
@@ -40,4 +37,4 @@ app.put(('/image'),(req, res)=>image.handleImage(req, res, pg))
 app.post(('/imageUrl'),(req, res)=>image.handleClarifaiResponse(req, res))
 
 
-app.listen('3001', ()=>console.log('App running on port 3001'))
+app.listen(process.env.PORT || '3001', ()=>console.log(`App running on port ${process.env.PORT}`))
