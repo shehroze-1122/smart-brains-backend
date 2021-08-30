@@ -1,7 +1,7 @@
 const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
 const stub = ClarifaiStub.grpc();
 
-const handleClarifaiResponse =  (req, res)=>{
+const handleClarifaiResponse =  (req, res, pg)=>{
 
     const metadata = new grpc.Metadata();
 

@@ -35,7 +35,7 @@ app.get(('/profile/:id'), (req, res)=> profile.handleProfile(req, res, pg))
 
 app.put(('/image'),(req, res)=>image.handleImage(req, res, pg))
 
-app.post(('/imageUrl'),(req, res)=>image.handleClarifaiResponse(req, res))
+app.post(('/imageUrl'),(req, res)=>image.handleClarifaiResponse(req, res, pg))
 
 
 app.listen(process.env.PORT || '3001', ()=>console.log(`App running on port ${process.env.PORT}`))
