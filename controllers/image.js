@@ -8,9 +8,8 @@ const handleClarifaiResponse =  (req, res, pg)=>{
     metadata.set("authorization", "Key "+ process.env.CLARIFAI_API);
     const {url, id} = req.body;
 
-    pg.select('entries').from('users').where('id', '=', id).then(entries=>{
-        console.log(entries)
-        if(entries[0]<20){
+    pg.select('entries').from('users').where('id', '=', id).then(data=>{
+        if(data[0].entries<20){
             stub.PostModelOutputs(
                 {
                     // This is the model ID of a publicly available General model. You may use any other public or custom model ID.
