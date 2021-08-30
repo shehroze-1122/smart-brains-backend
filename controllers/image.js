@@ -9,6 +9,7 @@ const handleClarifaiResponse =  (req, res, pg)=>{
     const {url, id} = req.body;
 
     pg.select('entries').from('users').where('id', '=', id).then(entries=>{
+        console.log(entries)
         if(entries[0]<20){
             stub.PostModelOutputs(
                 {
