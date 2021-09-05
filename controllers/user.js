@@ -1,7 +1,7 @@
 
 const updateUsername = (req, res, pg)=>{
-    const newName = req.body.newName;
-    const userEmail = req.body.userEmail;
+    const {newName, userEmail } = req.body;
+
     console.log(newName)
     if(newName && userEmail){
 
