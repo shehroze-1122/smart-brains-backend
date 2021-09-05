@@ -6,7 +6,9 @@ const knex = require('knex');
 const signin = require('./controllers/signin');
 const register = require('./controllers/register');
 const profile = require('./controllers/profile');
-const image = require('./controllers/image')
+const image = require('./controllers/image');
+const user = require('./controllers/user');
+
 
 const pg = knex({
     client: 'pg',
@@ -34,6 +36,8 @@ app.post(('/register'), (req, res)=>register.handleRegister(req, res, pg, bcrypt
 app.get(('/profile/:id'), (req, res)=> profile.handleProfile(req, res, pg))
 
 app.put(('/image'),(req, res)=>image.handleImage(req, res, pg))
+
+app.put(('/updateName'), (req, res) => user.updateUsername(req, res, pg))
 
 app.post(('/imageUrl'),(req, res)=>image.handleClarifaiResponse(req, res, pg))
 
