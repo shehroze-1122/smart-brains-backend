@@ -8,7 +8,7 @@ const updateUsername = (req, res, pg)=>{
         pg('users').where('email', '=', userEmail ).update('name', newName).returning('name')
         .then(name=>{
             if(name){
-                res.json(name[0])
+                res.json("name[0]")
             }else{
                 res.status('400').json('failed');
             }
