@@ -19,7 +19,7 @@ const updateUsername = (req, res, pg)=>{
         })
 
     }else{
-        res.status('400').json('failed because empty');
+        res.status('400').json('failed');
     }
 }
 module.exports= {
