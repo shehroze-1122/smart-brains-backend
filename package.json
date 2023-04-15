@@ -12,6 +12,7 @@
     "bcryptjs": "^2.4.3",
     "clarifai-nodejs-grpc": "^7.7.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "knex": "^0.95.10",
     "node-gyp": "^8.2.0",

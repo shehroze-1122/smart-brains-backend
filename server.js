@@ -9,6 +9,7 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const user = require('./controllers/user');
 
+require("dotenv").config()
 
 const pg = knex({
     client: 'pg',
@@ -42,4 +43,4 @@ app.put(('/updateName'), (req, res) => user.updateUsername(req, res, pg))
 app.post(('/imageUrl'),(req, res)=>image.handleClarifaiResponse(req, res, pg))
 
 
-app.listen(process.env.PORT || '3001', ()=>console.log(`App running on port ${process.env.PORT}`))
+app.listen(process.env.PORT || '3001', ()=>console.log(`App running on port ${process.env.PORT || 3001}`))
