@@ -18,7 +18,6 @@ const handleRegister = (req, res, pg, bcrypt) => {
                 return trx.insert({
                     name: name,
                     email: email,
-                    joined: new Date()
                 })
                 .into('users')
                 .returning('*')
